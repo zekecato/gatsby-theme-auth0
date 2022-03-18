@@ -30,6 +30,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
           AUTH0_AUDIENCE: JSON.stringify(audience),
           AUTH0_RESPONSE_TYPE: JSON.stringify(responseType),
           AUTH0_SCOPE: JSON.stringify(scope),
+          AUTH0_LOGOUT_REDIRECT: JSON.stringify(returnTo),
         },
       }),
     ],

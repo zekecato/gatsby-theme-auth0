@@ -41,6 +41,7 @@ module.exports = {
         // responseType: process.env.AUTH0_RESPONSE_TYPE, // Optional
         // scope: process.env.AUTH0_SCOPE, // Optional
         // callbackPath: "/auth/callback", // Optional
+        // returnTo: "/app", // Optional
       },
     },
   ],
@@ -79,6 +80,7 @@ export default () => {
 | `responseType` | `"token id_token"`       | `false`  | Configure Auth0 `Response Type` |
 | `scope`        | `"openid email profile"` | `false`  | Configure Auth0 `Scope`         |
 | `callbackPath` | `"/auth/callback"`       | `false`  | Change callback URL path        |
+| `returnTo`     | `""`                     | `false`  | Change logout redirect path     |
 
 ## Shadowing
 
