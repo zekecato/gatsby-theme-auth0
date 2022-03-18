@@ -107,7 +107,8 @@ class Auth {
     this.localLogout();
     this.auth0 &&
       this.auth0.logout({
-        returnTo: `${window.location.origin}${process.env.AUTH0_LOGOUT_REDIRECT}`,
+        returnTo: `${window.location.origin}${process.env
+          .AUTH0_LOGOUT_REDIRECT || ""}`,
       });
   };
 
