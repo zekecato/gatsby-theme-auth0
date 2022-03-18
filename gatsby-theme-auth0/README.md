@@ -22,7 +22,7 @@
 ## Installation
 
 ```sh
-$ npm install --save gatsby-theme-auth0
+$ npm install --save @zekecato/gatsby-theme-auth0
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ $ npm install --save gatsby-theme-auth0
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-auth0",
+      resolve: "@zekecato/gatsby-theme-auth0",
       options: {
         domain: process.env.AUTH0_DOMAIN,
         clientID: process.env.AUTH0_CLIENT_ID,
@@ -52,7 +52,7 @@ Set up your login/logout buttons and you're good to go!
 
 ```jsx
 import React from "react";
-import { AuthService, useAuth } from "gatsby-theme-auth0";
+import { AuthService, useAuth } from "@zekecato/gatsby-theme-auth0";
 
 export default () => {
   const { isLoggedIn, profile } = useAuth();

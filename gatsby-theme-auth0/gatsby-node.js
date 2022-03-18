@@ -16,6 +16,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
     audience,
     responseType,
     scope,
+    returnTo,
   } = options;
 
   checkRequiredCreds({ domain, clientID, redirectUri });
