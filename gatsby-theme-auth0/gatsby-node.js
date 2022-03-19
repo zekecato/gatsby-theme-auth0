@@ -1,5 +1,3 @@
-// const path = require("path");
-
 const checkRequiredCreds = creds => {
   Object.entries(creds).map(([key, value]) => {
     if (!value) {
@@ -36,12 +34,13 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
   });
 };
 
-// exports.createPages = ({ actions }, options) => {
-//   const { createPage } = actions;
-//   const { callbackPath } = options;
-
-//   createPage({
-//     path: callbackPath || "/auth/callback",
-//     component: path.resolve(`${__dirname}/src/pages/auth/callback.tsx`),
-//   });
-// };
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  const { callbackPath } = options;
+  if (callbackPath && page.path === "/auth/callback") {
+    const oldPage = Object.assign({}, page);
+    page.path = callbackPath;
+    deletePage(oldPage);
+    createPage(page);
+  }
+};
