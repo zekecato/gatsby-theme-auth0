@@ -1,4 +1,4 @@
-const checkRequiredCreds = creds => {
+const checkRequiredCreds = (creds) => {
   Object.entries(creds).map(([key, value]) => {
     if (!value) {
       throw new Error(`Required option "${key}" not specified`);
@@ -15,6 +15,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
     responseType,
     scope,
     returnTo,
+    callbackPath,
   } = options;
 
   checkRequiredCreds({ domain, clientID, redirectUri });
@@ -25,6 +26,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
         "process.env.AUTH0_DOMAIN": JSON.stringify(domain),
         "process.env.AUTH0_CLIENT_ID": JSON.stringify(clientID),
         "process.env.AUTH0_CALLBACK_URL": JSON.stringify(redirectUri),
+        "process.env.AUTH0_CALLBACK_PATH": JSON.stringify(callbackPath),
         "process.env.AUTH0_AUDIENCE": JSON.stringify(audience),
         "process.env.AUTH0_RESPONSE_TYPE": JSON.stringify(responseType),
         "process.env.AUTH0_SCOPE": JSON.stringify(scope),
@@ -36,7 +38,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
-  const { callbackPath } = options;
+  const callbackPath = process.env.AUTH0_CALLBACK_PATH;
   if (callbackPath && page.path === "/auth/callback") {
     const oldPage = Object.assign({}, page);
     page.path = callbackPath;
