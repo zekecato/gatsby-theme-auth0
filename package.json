@@ -1,38 +1,6 @@
 {
   "private": true,
-  "workspaces": [
-    "demos/*",
-    "gatsby-theme-auth0"
-  ],
-  "scripts": {
-    "dev": "yarn workspace demo-minimal dev",
-    "build": "yarn workspace demo-minimal build",
-    "format": "pretty-quick",
-    "lint": "eslint --ext .tsx,.ts gatsby-theme-auth0 demos"
-  },
-  "devDependencies": {
-    "@types/auth0-js": "^9.12.4",
-    "@types/node": "^13.7.4",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.5",
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
-    "@typescript-eslint/parser": "^1.7.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-config-react-app": "^4.0.0",
-    "eslint-plugin-react": "^7.18.3",
-    "husky": "^4.2.3",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^2.0.1",
-    "rimraf": "^3.0.0",
-    "typescript": "^3.7.4"
-  },
-  "author": "Emmanuel Pilande",
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "yarn lint && tsc --noEmit"
-    }
-  }
+  "scripts": {},
+  "author": "Zeke Cato",
+  "license": "MIT"
 }
