@@ -1,7 +1,7 @@
 import * as React from "react";
-import auth, { SessionState } from "../auth/service";
+import auth from "../auth/service";
 
-const useAuth = (stateCallback = (_state: SessionState) => {}) => {
+const useAuth = (stateCallback = _state => {}) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [isLoggedIn, setIsLoggedIn] = React.useState(auth.isAuthenticated());
   const [profile, setProfile] = React.useState(auth.getUserProfile());

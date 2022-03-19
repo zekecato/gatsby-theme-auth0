@@ -1,13 +1,8 @@
 import * as React from "react";
-import { WindowLocation } from "@reach/router";
 import AuthService from "../../auth/service";
 import Callback from "../../components/callback";
 
-interface Props {
-  location: WindowLocation;
-}
-
-const CallbackPage: React.FunctionComponent<Props> = props => {
+const CallbackPage = props => {
   const { location } = props;
 
   React.useEffect(() => {

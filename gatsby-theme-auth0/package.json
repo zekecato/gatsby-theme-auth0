@@ -15,25 +15,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "dependencies": {
-    "auth0-js": "^9.12.2",
-    "gatsby-plugin-typescript": "^2.1.23"
-  },
   "author": "Emmanuel Pilande",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/epilande/gatsby-theme-auth0.git",
-    "directory": "gatsby-theme-auth0"
-  },
-  "bugs": {
-    "url": "https://github.com/epilande/gatsby-theme-auth0/issues"
-  },
   "keywords": [
     "gatsby",
     "gatsby-theme",
     "gatsby-plugin",
     "auth0",
     "react"
-  ]
+  ],
+  "dependencies": {
+    "auth0-js": "^9.19.0"
+  }
 }
