@@ -30,7 +30,7 @@ exports.onCreateWebpackConfig = ({ plugins, actions }, options) => {
         "process.env.AUTH0_AUDIENCE": JSON.stringify(audience),
         "process.env.AUTH0_RESPONSE_TYPE": JSON.stringify(responseType),
         "process.env.AUTH0_SCOPE": JSON.stringify(scope),
-        "process.env.GATSBY_AUTH0_LOGOUT_REDIRECT": JSON.stringify(returnTo),
+        "process.env.AUTH0_LOGOUT_REDIRECT": JSON.stringify(returnTo),
       }),
     ],
   });

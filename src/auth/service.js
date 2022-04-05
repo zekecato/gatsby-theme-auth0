@@ -6,7 +6,7 @@ const isBrowser = typeof window !== "undefined";
 
 class Auth {
   constructor() {
-    this.sessionStateCallback = _state => {};
+    this.sessionStateCallback = (_state) => {};
     this.auth0 = process.env.AUTH0_DOMAIN
       ? new auth0.WebAuth(config)
       : undefined;
@@ -38,7 +38,7 @@ class Auth {
     this.getIdToken = () => this.idToken;
     this.getUserProfile = () => this.userProfile;
     this.checkSession = () =>
-      new Promise(resolve => {
+      new Promise((resolve) => {
         this.auth0 &&
           this.auth0.checkSession({}, (err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
@@ -72,8 +72,10 @@ class Auth {
       this.localLogout();
       this.auth0 &&
         this.auth0.logout({
-          returnTo: `${window.location.origin}${process.env
-            .GATSBY_AUTH0_LOGOUT_REDIRECT || ""}`,
+          returnTo: `${window.location.origin}${
+            process.env.AUTH0_LOGOUT_REDIRECT || ""
+          }`,
+          clientID: AUTH0_LOGOUT_REDIRECT,
         });
     };
     this.isAuthenticated = () => {
