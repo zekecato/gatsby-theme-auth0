@@ -75,7 +75,7 @@ class Auth {
           returnTo: `${window.location.origin}${
             process.env.AUTH0_LOGOUT_REDIRECT || ""
           }`,
-          clientID: AUTH0_LOGOUT_REDIRECT,
+          clientID: process.env.AUTH0_LOGOUT_REDIRECT,
         });
     };
     this.isAuthenticated = () => {
